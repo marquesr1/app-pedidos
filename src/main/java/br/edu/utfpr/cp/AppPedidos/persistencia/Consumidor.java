@@ -5,9 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Data
@@ -21,4 +19,6 @@ public class Consumidor implements Serializable {
     private long id;
     private String nome;
     private String telefone;
+    @ManyToOne
+    private Cidade cidade;
 }

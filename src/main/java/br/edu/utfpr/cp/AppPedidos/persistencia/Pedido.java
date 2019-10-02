@@ -5,9 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Data
@@ -20,5 +18,9 @@ public class Pedido implements Serializable {
     @Id @GeneratedValue
     private long id;
     private double total;
+    @ManyToOne
+    private Consumidor consumidor;
+    @OneToMany
+    private ItemPedido itemPedido;
 
 }

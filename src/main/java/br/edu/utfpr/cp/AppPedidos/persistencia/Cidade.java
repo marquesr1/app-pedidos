@@ -5,9 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Data
@@ -20,4 +18,6 @@ public class Cidade implements Serializable {
     @GeneratedValue
     private long id;
     private String nome;
+    @ManyToOne
+    private Estado estado;
 }
